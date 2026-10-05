@@ -380,7 +380,8 @@ namespace WPEFramework
         // @param clientId: Unique identifier for the client, as received in AddPowerModePreChangeClient
         // @param transactionId: transaction id as received in OnPowerModePreChange
         // @param delayPeriod: delay in seconds
-        virtual Core::hresult DelayPowerModeChangeBy(const uint32_t clientId , const int transactionId , const int delayPeriod ) = 0;
+        // @param renegotiateAfterwards: restart the complete pre-change negotiation after the delay
+        virtual Core::hresult DelayPowerModeChangeBy(const uint32_t clientId, const int transactionId, const int delayPeriod, const bool renegotiateAfterwards /* @optional */ = false) = 0;
 
         /** Get the Wakeup Time in seconds */
         // @text getTimeSinceWakeup
